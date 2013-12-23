@@ -19,6 +19,7 @@
 	$mypassword = stripslashes($mypassword);
 	//$myusername = pg_real_escape_string($myusername);
 	//$mypassword = pg_real_escape_string($mypassword);
+	$mypassword = md5($mypassword);
 	$sql="SELECT * FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
 	$result=pg_query($sql);
 

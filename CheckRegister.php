@@ -17,6 +17,7 @@ $regpassword=$_POST['regpassword'];
 // To protect MySQL injection (more detail about MySQL injection)
 $regusername = stripslashes($regusername);
 $regpassword = stripslashes($regpassword);
+$regpassword = md5($regpassword);
 
 	$sql="SELECT * FROM $tbl_name WHERE username='$regusername'";
 	$result=pg_query($sql);
@@ -33,7 +34,7 @@ $regpassword = stripslashes($regpassword);
 	else {
 		//$myusername = pg_real_escape_string($myusername);
 		//$mypassword = pg_real_escape_string($mypassword);
-		$sql="INSERT INTO $tbl_name VALUES (3,'$regusername','$regpassword',0,'NULL',0,0);";
+		$sql="INSERT INTO $tbl_name VALUES (4,'$regusername','$regpassword',0,'NULL',0,0);";
 		//$sql="SELECT * FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
 		$result=pg_query($sql);
 

@@ -22,8 +22,12 @@
 	session_start();
 	if (isset($_SESSION['user']))
 	{
-		echo "Merhaba ";
-		echo $_SESSION['user'];
+		echo '<div align="right">
+			"Merhaba ';
+			echo $_SESSION['user'];
+		echo '"</div>';
+		//echo "Merhaba ";
+		//echo $_SESSION['user'];
 
 		echo '<div align="right">
 		<a href="Logout.php"> Logout</a>
