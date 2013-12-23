@@ -18,12 +18,30 @@
 
 </head>
 
+<?php 
+	session_start();
+	if (isset($_SESSION['user']))
+	{
+		echo "Merhaba ";
+		echo $_SESSION['user'];
 
-<div align="right">
-	<a href="Login.php"> Login </a>
-	/
-	<a href="Register.php"> Register </a>
-</div>
+		echo '<div align="right">
+		<a href="Logout.php"> Logout</a>
+		</div>';
+	}
+
+	else
+	{
+		echo '<div align="right">
+			<a href="Login.php"> Login </a>
+			/
+			<a href="Register.php"> Register </a>
+			</div>';
+
+	}
+
+?>
+
 
 <table border="1" align="center">
 	<tr>
@@ -49,4 +67,3 @@
 
 	</tr>
 </table>
-

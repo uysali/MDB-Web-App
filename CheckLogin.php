@@ -28,11 +28,11 @@
 	// If result matched $myusername and $mypassword, table row must be 1 row
 	if($count==1){
 
+		session_start();
+
 		// Register $myusername, $mypassword and redirect to file "login_success.php"
 		$_SESSION['user']=$myusername;
 		$_SESSION['password']=$mypassword;
-		//session_register("myusername");
-		//session_register("mypassword"); 
 		header("location:LoginSuccess.php");
 	}
 	else {
