@@ -14,6 +14,11 @@
 		{
 			window.location.href='Search.php';
 		}
+
+		function goStatistics()
+		{
+			window.location.href='Statistics.php'
+		}
 	</script>
 
 </head>
@@ -54,11 +59,15 @@
 		</td>
 
 		<td width="200">
-			<input type="Button" name="profil" id="profil" value="Profil" style="width:200px">
+			<input type="Button" name="ayarlar" id="ayarlar" value="Ayarlarım" style="width:200px">
 		</td>
 
 		<td width="200">
 			<input type="Button" name="arama" id="arama" value="Arama" style="width:200px" onclick="goSearch()">
+		</td>
+
+		<td width="200">
+			<input type="Button" name="istatistik" id="istatistik" value="İstatistikler" style="width:200px" onclick="goStatistics()">
 		</td>
 
 		<td width="200">
