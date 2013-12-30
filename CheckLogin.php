@@ -20,11 +20,12 @@
 	//$myusername = pg_real_escape_string($myusername);
 	//$mypassword = pg_real_escape_string($mypassword);
 	$mypassword = md5($mypassword);
-	$sql="SELECT * FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
+	$sql="SELECT user_id FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
 	$result=pg_query($sql);
 
 	// Mysql_num_row is counting table row
 	$count=pg_num_rows($result);
+	$row=pg_fetch_row($result);
 
 	// If result matched $myusername and $mypassword, table row must be 1 row
 	if($count==1){
@@ -34,6 +35,16 @@
 		// Register $myusername, $mypassword and redirect to file "login_success.php"
 		$_SESSION['user']=$myusername;
 		$_SESSION['password']=$mypassword;
+
+		$sqlAdmin="SELECT user_id FROM kulladmin WHERE user_id=$row[0]";
+		$resultAdmin=pg_query($sqlAdmin);
+		$countAdmin=pg_num_rows($resultAdmin);
+		$row2=pg_fetch_row($resultAdmin);
+		if($countAdmin==1)
+		{
+			$_SESSION['admin']=$myusername;
+		}
+
 		header("location:LoginSuccess.php");
 	}
 	else {

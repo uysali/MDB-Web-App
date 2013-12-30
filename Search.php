@@ -1,5 +1,9 @@
 <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />		<!-- Turkce karakter sorunu-->
 
+<div align="center">
+	<h1>Movie DB</h1>
+</div>
+
 <table border="1" align="center">
 	<tr>
 		<td width="200">
@@ -20,7 +24,7 @@
 			<form name="form3" method="post" action="SearchByName.php">
 				<input name="SearchByName" type="text" id="SearchByName">
 				<br>
-				<strong>Filmin tam adını giriniz!</strong>
+				<strong>Arayacağınız öğenin tam adını giriniz!</strong>
 				<br>
 				<br>
 				<input name="Radio" type="radio" id="Radio" value="Film" checked>Film

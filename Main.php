@@ -27,13 +27,16 @@
 	session_start();
 	if (isset($_SESSION['user']))
 	{
+		if(isset($_SESSION['admin']))
+		{
+			echo '<div align="right">
+			<a href="AdminPanel.php"> Admin Panel</a>
+			</div>';
+		}
 		echo '<div align="right">
 			"Merhaba ';
 			echo $_SESSION['user'];
 		echo '"</div>';
-		//echo "Merhaba ";
-		//echo $_SESSION['user'];
-
 		echo '<div align="right">
 		<a href="Logout.php"> Logout</a>
 		</div>';

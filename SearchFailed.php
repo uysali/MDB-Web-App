@@ -1,4 +1,9 @@
 <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />		<!-- Turkce karakter sorunu-->
+
+<div align="center">
+	<h1>Movie DB</h1>
+</div>
+
 <head>
 
 	<div align="center">

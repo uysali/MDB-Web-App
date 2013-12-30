@@ -1,6 +1,12 @@
+<meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />		<!-- Turkce karakter sorunu-->
+
+<div align="center">
+	<h1>Movie DB</h1>
+</div>
+
 <?php
-	echo "Succesfully Registered <br>";
-	echo "You can now log in <br>";
+	echo "Kayıt işlemi başarılı <br>";
+	echo "Artık giriş yapabilirsiniz <br>";
 ?>
 
 <head>
