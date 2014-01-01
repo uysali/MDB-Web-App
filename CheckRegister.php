@@ -34,7 +34,7 @@ $regpassword = md5($regpassword);
 	else {
 		//$myusername = pg_real_escape_string($myusername);
 		//$mypassword = pg_real_escape_string($mypassword);
-		$sql="INSERT INTO $tbl_name VALUES (1,'$regusername','$regpassword',0,'NULL',0,0);";
+		$sql="INSERT INTO $tbl_name VALUES (DEFAULT,'$regusername','$regpassword',0,'NULL',0,0)";
 		//$sql="SELECT * FROM $tbl_name WHERE username='$myusername' and password='$mypassword'";
 		$result=pg_query($sql);
 
