@@ -1,33 +1,6 @@
 <meta http-equiv="Content-Type" content="text/HTML; charset=utf-8" />		<!-- Turkce karakter sorunu-->
 
-<html>
-	<head>
-		<script type="text/javascript">
-			function goAdd()
-			{
-				window.location.href='AddMovie.php';
-			}
-
-			function goDelete()
-			{
-				window.location.href='DeleteMovie.php';
-			}
-
-			function goEdit()
-			{
-				window.location.href='EditMovie.php';
-			}
-		</script>
-	</head>
-<body>
-
-</body>
-</html>
-
 <?php
-
-	session_start();
-
 	$host="dbs.cs.hacettepe.edu.tr"; // Host name 
 	$username="b20926888"; // Mysql username 
 	$password="rebankyor"; // Mysql password 
@@ -38,16 +11,9 @@
 	$dbconn = pg_connect("host=localhost dbname=movieDb user=mert password=qweasd")
 	    or die('Could not connect: ' . pg_last_error());
 
-	if(!isset($_SESSION['user']))
-	{
-		echo "Bu sayfayı görebilmeniz için giriş yapmanız gerekmektedir";
-		echo '<div>
-			<a href="Login.php">Login</a>
-		</div>';
-	}
+	session_start();
 
-
-	elseif(isset($_SESSION['user']))
+	if(isset($_SESSION['user']))
 	{
 		echo "<b><u>Filmlerim</u></b><br>";
 		echo "<u>id</u>&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -72,32 +38,34 @@
 				echo "$row[1] <br>";
 			}
 
+			echo "<br><br>";
+
+			echo '<table align="left">
+						<form name="form8" method="post" action="MovieDeleted.php">
+							<tr>
+								<td>
+									<b>Film Sil</b>
+								</td>
+							</tr>
+							<tr>
+								<td>Film ID</td>
+								<td>:</td>
+								<td>
+									<input type="text" name="filmid" id="filmid">
+								</td>
+								<td>
+									<input type="submit" id="sil" value="Sil">
+								</td>
+							</tr>
+						</form>
+					</table>';
+
 		}
 
 		else
 		{
 			echo "Film Bulunamadı.";
 		}
-
-
-
-		echo '
-		<br><br>
-		<table border="1" align="left">
-			<tr>
-				<td>
-					<input type="button" name="filmEkle" id="filmEkle" value="Film Ekle" onclick="goAdd()">
-				</td>
-				<td>
-					<input type="button" name="filmSil" id="filmSil" value="Film Sil" onclick="goDelete()">
-				</td>
-				<td>
-					<input type="button" name="filmEdit" id="filmEdit" value="Film Düzenle" onclick="goEdit()">
-				</td>
-			</tr>
-		</table>
-		';
-
-	}
+	}	
 
 ?>

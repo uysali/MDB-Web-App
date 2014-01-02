@@ -70,11 +70,32 @@ $this->ChapterBody($txt);
 
 if($category == 'Pdf'){
 $pdf=new PDF();
-$title='Kullanici Raporlama';
+$title='MDB Raporlama';
 $pdf->SetTitle($title);
 $pdf->SetAuthor('The Movie Database');
 $pdf->PrintChapter('Report',$result);
 $pdf->Output();
+}
+
+if($category == 'Txt'){
+header('Content-disposition: attachment; filename=report.txt');
+header('Content-type: text/plain');
+
+
+echo "MDB Raporlama\n";
+echo "The Movie Database\n";
+echo $result;
+}
+
+if($category == 'Html'){
+header('Content-disposition: attachment; filename=report.html');
+header('Content-type: text/html');
+
+echo "<html><header>";
+echo "MDB Raporlama</header><body>";
+echo "<h1>The Movie Database</h1>";
+echo nl2br($result);
+echo "</body></html>";
 }
 
 ?>
