@@ -1,13 +1,20 @@
 <?php
 
-	$host="dbs.cs.hacettepe.edu.tr"; // Host name 
-	$username="b20926888"; // Mysql username 
-	$password="rebankyor"; // Mysql password 
-	$db_name="b20926888"; // Database name 
+	//$host="dbs.cs.hacettepe.edu.tr"; // Host name 
+	//$username="b20926888"; // Mysql username 
+	//$password="rebankyor"; // Mysql password 
+	//$db_name="b20926888"; // Database name 
+	//$tbl_name="kullanici"; // Table name 
+
+
+	$host="localhost"; // Host name 
+	$username="mert"; // Mysql username 
+	$password="qweasd"; // Mysql password 
+	$db_name="movieDb"; // Database name 
 	$tbl_name="kullanici"; // Table name 
 
 	// Connect to server and select databse.
-	$dbconn = pg_connect("host=dbs.cs.hacettepe.edu.tr dbname=b20926888 user=b20926888 password=rebankyor")
+	$dbconn = pg_connect("host=localhost dbname=movieDb user=mert password=qweasd")
 	    or die('Could not connect: ' . pg_last_error());
 
 	// username and password sent from form 

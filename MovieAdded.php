@@ -23,7 +23,7 @@
 	$tbl_name="film"; // Table name 
 
 	// Connect to server and select databse.
-	$dbconn = pg_connect("host=dbs.cs.hacettepe.edu.tr dbname=b20926888 user=b20926888 password=rebankyor")
+	$dbconn = pg_connect("host=localhost dbname=movieDb user=mert password=qweasd")
 	    or die('Could not connect: ' . pg_last_error());
 
 	$filmAdi=$_POST['filmAdi'];

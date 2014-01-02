@@ -11,7 +11,7 @@
 	$db_name="b20926888"; // Database name 
 
 	// Connect to server and select databse.
-	$dbconn = pg_connect("host=dbs.cs.hacettepe.edu.tr dbname=b20926888 user=b20926888 password=rebankyor")
+	$dbconn = pg_connect("host=localhost dbname=movieDb user=mert password=qweasd")
 	    or die('Could not connect: ' . pg_last_error());
 
 
@@ -46,6 +46,7 @@
 	$sql = "SELECT film_isim FROM film WHERE film_isim LIKE '%$content%' AND puan>='$mdbMin' AND puan<='$mdbMax' AND imdb_puan>='$imdbMin' AND imdb_puan<=$imdbMax";
 
 	$result = pg_query($sql);
+	$result_str = "";
 
 	$count = pg_num_rows($result);
 
@@ -54,7 +55,11 @@
 		while ($row = pg_fetch_row($result)) 
 		{
 			echo "Result : $row[0] <br>";
+			$result_str .= "Result : $row[0] \n";
 		}
+
+		session_start();
+		$_SESSION['sessionVar'] = $result_str;
 
 	}
 
@@ -65,3 +70,24 @@
 
 
 ?>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<form name="reportMovies" method="post" action="DownloadReport.php">
+				<strong>Rapor indirmek için dosya türü seçin</strong>
+				<br>
+				<br>
+				<input name="Radio" type="radio" id="Radio" value="Pdf" checked>PDF
+				<br>
+				<input name="Radio" type="radio" id="Radio" value="Txt">TXT
+				<br>
+				<input name="Radio" type="radio" id="Radio" value="Html">HTML
+				<br>
+				<br>
+				<br>
+				<input name="indir" type="submit" value="İndir">
+			</form>
