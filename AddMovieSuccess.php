@@ -24,4 +24,4 @@
 
 ?>
 
-<input type="button" name="goMain" id="goMain" onclick="goMain()">
+<input type="button" name="goMain" id="goMain" value="Ana Sayfa" onclick="goMain()">

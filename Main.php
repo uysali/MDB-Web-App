@@ -10,6 +10,11 @@
 			window.location.href='Main.php';
 		}
 
+		function goMovies()
+		{
+			window.location.href='MyMovies.php'
+		}
+
 		function goSearch()
 		{
 			window.location.href='Search.php';
@@ -66,6 +71,10 @@
 		</td>
 
 		<td width="200">
+			<input type="Button" name="filmlerim" id="filmlerim" value="Filmlerim" style="width:200px" onclick="goMovies()">
+		</td>
+
+		<td width="200">
 			<input type="Button" name="arama" id="arama" value="Arama" style="width:200px" onclick="goSearch()">
 		</td>
 
@@ -74,11 +83,7 @@
 		</td>
 
 		<td width="200">
-			<input type="Button" name="hakkimizda" id="hakkimizda" value="Hakkımızda" style="width:200px">
-		</td>
-
-		<td width="200">
-			<input type="Button" name="iletisim" id="iletisim" value="İletişim" style="width:200px">
+			<input type="Button" name="hakkimizda" id="hakkimizda" value="Hakkımızda / İletişim" style="width:200px">
 		</td>
 
 	</tr>
