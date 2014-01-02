@@ -19,14 +19,16 @@
 		<td>
 			Tablo Ekle
 		</td>
-		<td>
-			<input type="text" name="tabloAdi" id="tabloAdi">
+		<form name="form7" method="post" action="AddTable.php">
+			<td>
+				<input type="text" name="tabloAdi" id="tabloAdi">
 
-			<input type="text" name="alan" id="alan" style="width:400">
-		</td>
-		<td>
-			<input type="button" name="tabloEkle" id="tabloEkle" value="Ekle">
-		</td>
+				<input type="text" name="alan" id="alan" style="width:400">
+			</td>
+			<td>
+				<input type="submit" name="tabloEkle" id="tabloEkle" value="Ekle">
+			</td>
+		</form>
 	</tr>
 	<tr>
 		<td>
